@@ -29,7 +29,7 @@ export default {
     return {
       //MDY palindromes
       palindromes: [
-        //{date: '2022-01-21', name: 'Feburary 10, 2001', digits:'8', style:'DMY', display:'10-02-2001'},
+        {date: '2022-01-21', name: 'Feburary 10, 2001', digits:'8', style:'MDY', display:'10-02-2001'},
         {date: '2001-02-10', name: 'Feburary 10, 2001', digits:'8', style:'DMY', display:'10-02-2001'},
         {date: '2002-02-20', name: 'Feburary 20, 2002', digits:'8', style:'DMY', display:'20-02-2002'},
         {date: '2001-10-02', name: 'October 2, 2001', digits:'8', style:'MDY', display:'10-02-2001'},  
@@ -174,7 +174,7 @@ body {
 }
 section {
   margin: auto;
-  padding: 10px 25px;
+  padding: 30px 50px;
   display: inline-block;
   background-color: #ffffff;
   border-radius: 10px;
