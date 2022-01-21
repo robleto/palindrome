@@ -6,16 +6,16 @@
     <!-- Is a Palindrome -->
     <div v-for="palindrome in palindromes" v-bind:key="palindrome.date">
       <div v-if="palindrome.date == this.currentDate">
+        <h1>{{palindrome.display}}</h1>
         <h2>Today is a palindrome <span class="style-disclaimer" v-if="palindrome.style=='DMY'"> <br />(in the Day-Month-Year style)</span>
         </h2>
-        <h1>{{palindrome.display}}</h1>
       </div>
     </div>
 
     <!-- Is NOT a Palindrome -->
     <div v-if="isPalindrome == 0">
-        <h2>Today is NOT a palindrome</h2>
         <h1>{{this.noDisplayDate}}</h1>
+        <h2>Today is NOT a palindrome</h2>
     </div>
 
   </section>
@@ -178,21 +178,25 @@ section {
   display: inline-block;
   background-color: #ffffff;
   border-radius: 10px;
+  border: solid 3px #333;
   opacity: 0.8;
   color: #333333;
 }
 h1 {
   font-size: 300%;
-  margin: 0px 0px 20px 0px;
+  margin: 0px;
 }
 h2 {
   font-size: 200%;
+  margin: 0px 0px 20px 0px;
 }
 h3 {
   font-size: 170%;
   font-style: italic;
   font-family: Georgia, serif;
   font-weight: 400;
+  border-bottom: dotted 1px #999;
+  padding-bottom: 1rem
 }
 .style-disclaimer {
   font-style: italic;
