@@ -13,6 +13,6 @@ My late father was a Math major and always found a fascination with numbers and 
 
 ## Code and Tools
 
-This site was created with: React, Next.js, Tailwind, Typescript, HTML, and CSS 
+This site was created with: **React**, **Next.js**, **Tailwind**, **Typescript**, **HTML**, and **CSS** 
 
-These tools were used to build this site:  Figma, VS Code, Github, and Netlify  
+Tools used to build this site:  **Figma**, **VS Code**, **Github**, **Netlify**, and **ChatGPT**  
