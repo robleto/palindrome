@@ -2,6 +2,7 @@
 
 import React from "react";
 import styles from "./Footer.module.css"; // Import the CSS module
+import Image from "next/image";
 
 
 const Footer: React.FC = () => {
@@ -25,9 +26,11 @@ const Footer: React.FC = () => {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<img
+						<Image
 							src="/_icons/website-icon.svg"
 							alt="Website"
+							width={24} // Set the appropriate width
+							height={24}
 							className="w-6 h-6"
 						/>
 					</a>
@@ -36,9 +39,11 @@ const Footer: React.FC = () => {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<img
+						<Image
 							src="/_icons/codepen-icon.svg"
 							alt="CodePen"
+							width={24} // Set the appropriate width
+							height={24}
 							className="w-6 h-6"
 						/>
 					</a>
@@ -47,9 +52,11 @@ const Footer: React.FC = () => {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<img
+						<Image
 							src="/_icons/dribbble-icon.svg"
 							alt="Dribbble"
+							width={24} // Set the appropriate width
+							height={24}
 							className="w-6 h-6"
 						/>
 					</a>
@@ -58,9 +65,11 @@ const Footer: React.FC = () => {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<img
+						<Image
 							src="/_icons/github-icon.svg"
 							alt="GitHub"
+							width={24} // Set the appropriate width
+							height={24}
 							className="w-6 h-6"
 						/>
 					</a>
@@ -69,9 +78,11 @@ const Footer: React.FC = () => {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<img
+						<Image
 							src="/_icons/linkedin-icon.svg"
 							alt="LinkedIn"
+							width={24} // Set the appropriate width
+							height={24}
 							className="w-6 h-6"
 						/>
 					</a>
