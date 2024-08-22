@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation"; // Commented out for testing with query strings
 import { formatDate, isPalindrome } from "../utils/dateUtils";
 import { palindromeConfig } from "../config/palindromeConfig";
 
 const PalindromePage: React.FC = () => {
 	const [isEightDigit, setIsEightDigit] = useState(true);
-	const [showToggle, setShowToggle] = useState(true); // State to control toggle visibility
+	const [showToggle, setShowToggle] = useState(true);
 	const [palindromeResult, setPalindromeResult] = useState({
 		isPalindrome: false,
 		firstPart: "",
@@ -16,69 +16,53 @@ const PalindromePage: React.FC = () => {
 		lastThreeDigits: "",
 	});
 
-	const searchParams = useSearchParams();
-
+	// You might want to useEffect for any logic that happens after the page loads
 	useEffect(() => {
-		// Parse the date from the query string
-		const dateParam = searchParams.get("date");
+		// const searchParams = useSearchParams(); // Commented out for testing with query strings
+
 		let today = new Date();
 
-		if (dateParam) {
-			// Try to parse the date from MMDDYYYY or MDDYYYY
-			if (dateParam.length === 8) {
-				// MMDDYYYY
-				const month = parseInt(dateParam.slice(0, 2)) - 1;
-				const day = parseInt(dateParam.slice(2, 4));
-				const year = parseInt(dateParam.slice(4));
-				today = new Date(year, month, day);
-			} else if (dateParam.length === 7) {
-				// MDDYYYY
-				const month = parseInt(dateParam.slice(0, 1)) - 1;
-				const day = parseInt(dateParam.slice(1, 3));
-				const year = parseInt(dateParam.slice(3));
-				today = new Date(year, month, day);
-			}
-		}
+		// Example for testing with query strings:
+		// const dateParam = searchParams.get("date");
+		// if (dateParam) {
+		// 	if (dateParam.length === 8) {
+		// 		const month = parseInt(dateParam.slice(0, 2)) - 1;
+		// 		const day = parseInt(dateParam.slice(2, 4));
+		// 		const year = parseInt(dateParam.slice(4));
+		// 		today = new Date(year, month, day);
+		// 	} else if (dateParam.length === 7) {
+		// 		const month = parseInt(dateParam.slice(0, 1)) - 1;
+		// 		const day = parseInt(dateParam.slice(1, 3));
+		// 		const year = parseInt(dateParam.slice(3));
+		// 		today = new Date(year, month, day);
+		// 	}
+		// }
 
-		// Determine if the toggle should be shown based on the month
-		const currentMonth = today.getMonth(); // 0-indexed (0 = January, 11 = December)
-		setShowToggle(currentMonth < 9); // Show toggle if month is January (0) through September (8)
+		const currentMonth = today.getMonth();
+		setShowToggle(currentMonth < 9);
 
 		const { firstPart, secondPart } = formatDate(today, isEightDigit);
 
-		// Extract the middle digit as the first digit of the year (YYYY)
 		const middleDigit = secondPart[0];
 		const lastThreeDigits = secondPart.slice(1);
 
-		// Check for query strings ?yes or ?no
-		const forceYes = searchParams.get("yes") !== null;
-		const forceNo = searchParams.get("no") !== null;
+		// const forceYes = searchParams.get("yes") !== null;
+		// const forceNo = searchParams.get("no") !== null;
 
-		// Override the result if query strings are present
-		let result;
-		if (forceYes) {
-			result = true;
-		} else if (forceNo) {
-			result = false;
-		} else {
-			// Default behavior: check if the date is a palindrome
-			result = isEightDigit
-				? isPalindrome(firstPart, secondPart)
-				: isPalindrome(firstPart.slice(0, 3), lastThreeDigits);
-		}
+		const result = isEightDigit
+			? isPalindrome(firstPart, secondPart)
+			: isPalindrome(firstPart.slice(0, 3), lastThreeDigits);
 
 		setPalindromeResult({
 			isPalindrome: result,
 			firstPart,
-			fullYear: secondPart, // The full year (YYYY)
-			middleDigit, // The first digit of the year
-			lastThreeDigits, // The last three digits of the year
+			fullYear: secondPart,
+			middleDigit,
+			lastThreeDigits,
 		});
-	}, [isEightDigit, searchParams]);
+	}, [isEightDigit]);
 
-	const toggleFormat = () => {
-		setIsEightDigit(!isEightDigit);
-	};
+	const toggleFormat = () => setIsEightDigit(!isEightDigit);
 
 	const config = isEightDigit
 		? palindromeConfig.eightDigit
