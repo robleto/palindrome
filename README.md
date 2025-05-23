@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Is Today a Palinedrome
+Checking each day if the month and day are a reserve of the year making today's date a palindrome.
 
-## Getting Started
+![Yes! Today is a Palindrome](https://cdn.dribbble.com/userupload/16210622/file/original-98827ae962d3e68e001ad1f0a00a5e02.png?resize=1504x1290)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Hello there 👋, thanks for visiting.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+My late father was a Math major and always found a fascination with numbers and found a particular interest in date palindromes. He would write or call to share when the date was a palindrome and in the first part of the century there were quite a few.  This site is built in his memory to share as my dad would if today's date is a palindrome. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+. . .
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Code and Tools
 
-To learn more about Next.js, take a look at the following resources:
+This site was created with: **React**, **Next.js**, **Tailwind**, **Typescript**, **HTML**, and **CSS** 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Tools used to build this site:  **Figma**, **VS Code**, **Github**, **Netlify**, and **ChatGPT**  
