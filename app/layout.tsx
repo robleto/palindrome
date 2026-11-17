@@ -4,6 +4,7 @@ import Footer from "./components/Footer"; // Import the Footer component
 
 // Import the Saira Condensed font
 import { Saira_Condensed } from "next/font/google";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 const sairaCondensed = Saira_Condensed({
 	subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={sairaCondensed.className}>
 			<body>
+				<GoogleAnalytics />
 				<div className="w-full h-full flex flex-col overflow-auto">
 					<div className="flex-1 flex min-h-screen flex-col">
 						{children}
